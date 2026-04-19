@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="control_button_color">#4CC4C4C4</color>
-    <color name="control_button_pressed_color">#4D000000</color>
-
-    <color name="minebutton_color">#57CC33</color>
-    <color name="background_app">#181818</color>
-    <color name="divider">@color/background_overlay</color>
-    <color name="background_overlay">#464646</color>
-    <color name="background_status_bar">#242424</color>
-    <color name="background_bottom_bar">#232323</color>
-
-    <color name="primary_text">#FFFFFF</color>
-    <color name="secondary_text">#B2B2B2</color>
+    <color name="zalith_bg">#0D0D0D</color> <color name="zalith_card">#1A1A1A</color> <color name="zalith_accent">#00FF88</color> <color name="glass_effect">#26FFFFFF</color> <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+    
+    <color name="ping_green">#00E676</color>
+    <color name="battery_normal">#FFFFFF</color>
+    <color name="error_red">#FF5252</color>
+    <color name="background_overlay">#80000000</color>
+<color name="minebutton_color">#3C8527</color>
+<color name="control_button_pressed_color">#55FFFFFF</color>
+<color name="control_button_color">#33000000</color>
+<color name="primary_text">#FFFFFF</color><color name="background_status_bar">#000000</color>
+<color name="background_app">#121212</color>
+<color name="divider">#33FFFFFF</color>
+<color name="background_bottom_bar">#121212</color>
 </resources>

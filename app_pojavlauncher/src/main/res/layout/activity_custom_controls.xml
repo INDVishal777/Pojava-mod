@@ -2,23 +2,23 @@
 <androidx.drawerlayout.widget.DrawerLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:layout_height="match_parent"
+	android:id="@+id/customctrl_drawerlayout"
 	android:layout_width="match_parent"
-	android:layout_alignParentRight="true"
-	android:id="@+id/customctrl_drawerlayout">
-
+	android:layout_height="match_parent"
+	android:background="@color/zalith_bg">
 
 	<androidx.constraintlayout.widget.ConstraintLayout
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content">
-
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
 
 		<net.kdt.pojavlaunch.customcontrols.handleview.DrawerPullButton
 			android:id="@+id/drawer_button"
-			android:layout_width="40dp"
-			android:layout_height="20dp"
-			android:padding="6dp"
-			android:elevation="10dp"
+			android:layout_width="60dp"
+			android:layout_height="30dp"
+			android:padding="8dp"
+			android:elevation="15dp"
+			android:background="@color/zalith_accent"
+			android:alpha="0.8"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
@@ -26,27 +26,33 @@
 		<TextView
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_alignParentRight="true"
+			android:layout_margin="10dp"
 			android:text="@string/hint_control_mapping"
+			android:textColor="@color/zalith_accent"
+			android:textSize="10sp"
+			android:textStyle="bold"
+			android:textAllCaps="true"
+			android:letterSpacing="0.1"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
 
 		<net.kdt.pojavlaunch.customcontrols.ControlLayout
 			android:id="@+id/customctrl_controllayout"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-
-		</net.kdt.pojavlaunch.customcontrols.ControlLayout>
+			android:layout_height="match_parent"
+			android:background="#0D000000"> </net.kdt.pojavlaunch.customcontrols.ControlLayout>
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
 	<ListView
 		android:id="@+id/customctrl_navigation_view"
-		android:layout_width="200dp"
+		android:layout_width="240dp"
 		android:layout_height="match_parent"
 		android:layout_gravity="right"
-		android:background="?attr/colorBackgroundFloating"
+		android:background="@color/zalith_card"
+		android:divider="@color/glass_effect"
+		android:dividerHeight="1dp"
+		android:paddingTop="15dp"
 		android:fitsSystemWindows="false" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
-

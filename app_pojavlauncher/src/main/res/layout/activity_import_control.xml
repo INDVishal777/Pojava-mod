@@ -4,69 +4,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/zalith_bg">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="-10dp"
+        android:alpha="0.1"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_setting_sign_in_background" />
+        android:src="@drawable/ic_setting_sign_in_background"
+        app:tint="@color/zalith_accent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-
-        android:layout_marginHorizontal="@dimen/_15sdp"
-        android:background="@drawable/menu_background"
-        android:paddingVertical="20dp"
+        android:layout_marginHorizontal="25dp"
+        android:background="@color/zalith_card"
+        android:paddingVertical="30dp"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        tools:layout_editor_absoluteX="16dp">
+        app:layout_constraintVertical_bias="0.4">
 
         <TextView
             android:id="@+id/textView_import_control_file_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginBottom="5dp"
-            android:text="File name:"
+            android:layout_marginStart="35dp"
+            android:layout_marginBottom="8dp"
+            android:text="FILE NAME / CONFIG"
+            android:textColor="@color/zalith_accent"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.2"
             app:layout_constraintBottom_toTopOf="@+id/editText_import_control_file_name"
-            app:layout_constraintStart_toStartOf="@+id/editText_import_control_file_name" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.kdt.mcgui.MineEditText
             android:id="@+id/editText_import_control_file_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:layout_marginHorizontal="35dp"
-            android:layout_marginBottom="20dp"
-            android:hint="File name"
-            android:imeOptions="flagForceAscii"
-
+            android:layout_marginBottom="25dp"
+            android:hint="Enter config name..."
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_secondary"
+            android:background="@color/glass_effect"
+            android:paddingHorizontal="15dp"
             app:layout_constraintBottom_toTopOf="@+id/mineButton_import_control" />
 
         <com.kdt.mcgui.MineButton
             android:id="@+id/mineButton_import_control"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-
-            android:background="@drawable/mine_button_background"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="35dp"
+            android:backgroundTint="@color/zalith_accent"
             android:onClick="startImport"
-
-            android:text="@string/import_control_import_button"
-            android:textColor="@android:color/white"
+            android:text="IMPORT CONTROLS"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/editText_import_control_file_name"
-
-            app:layout_constraintStart_toStartOf="@+id/editText_import_control_file_name"
-
-            app:layout_constraintVertical_bias="0.70" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-

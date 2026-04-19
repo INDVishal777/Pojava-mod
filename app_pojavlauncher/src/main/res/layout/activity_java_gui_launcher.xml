@@ -4,30 +4,25 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_height="match_parent"
-	android:layout_width="match_parent">
+	android:layout_width="match_parent"
+    android:background="@color/zalith_bg">
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:background="#000000">
+		android:layout_height="match_parent">
 
 		<net.kdt.pojavlaunch.customcontrols.keyboard.TouchCharInput
 			android:id="@+id/awt_touch_char"
 			android:layout_width="1dp"
 			android:layout_height="1dp"
-			android:background="@android:color/darker_gray"
-			android:ems="10"
-			android:imeOptions="flagNoFullscreen|flagNoExtractUi|flagNoPersonalizedLearning|actionDone"
-			android:inputType="textFilter|textImeMultiLine|textAutoComplete|textAutoCorrect"
-			tools:ignore="TouchTargetSizeCheck"
-			/>
+			android:imeOptions="flagNoFullscreen|flagNoExtractUi"
+			android:inputType="textNoSuggestions" />
 
 		<net.kdt.pojavlaunch.AWTCanvasView
 			android:id="@+id/installmod_surfaceview"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:foregroundGravity="bottom"
-			app:layout_constraintBottom_toBottomOf="@+id/main_touchpad"
+			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
@@ -36,26 +31,25 @@
 			android:id="@+id/main_touchpad"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:orientation="vertical"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent">
+			android:orientation="vertical">
 
 			<ImageView
 				android:id="@+id/main_mouse_pointer"
-				android:layout_width="18dp"
-				android:layout_height="27dp"
-				android:src="@drawable/ic_mouse_pointer" />
-
-		</LinearLayout>
+				android:layout_width="22dp"
+				android:layout_height="32dp"
+				android:src="@drawable/ic_mouse_pointer"
+                app:tint="@color/zalith_accent" /> </LinearLayout>
 
 		<Button
 			android:id="@+id/installmod_btn2"
+			style="@style/LauncherMenuButton.Universal"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_alignParentRight="true"
-			android:background="@drawable/control_button"
+			android:layout_margin="10dp"
+			android:backgroundTint="#FF4444" 
 			android:onClick="forceClose"
-			android:text="@string/control_forceclose"
+			android:text="X"
+            android:textStyle="bold"
 			app:layout_constraintRight_toRightOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
 
@@ -63,136 +57,91 @@
 			android:id="@+id/installmod_btn3"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_toLeftOf="@id/installmod_btn2"
-			android:layout_marginTop="2dp"
-			android:background="@drawable/control_button"
+			android:layout_margin="5dp"
+			android:background="@drawable/zalith_button_bg"
 			android:onClick="openLogOutput"
-			android:text="@string/control_viewout"
+			android:text="LOGS"
+            android:textColor="#FFF"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintRight_toLeftOf="@id/installmod_btn2"
 			app:layout_constraintTop_toBottomOf="@+id/installmod_btn2" />
 
-		<Button
-			android:id="@+id/button2"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_toLeftOf="@id/installmod_btn3"
-			android:layout_marginTop="2dp"
-			android:background="@drawable/control_button"
-			android:onClick="toggleVirtualMouse"
-			android:text="@string/control_mouse"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintRight_toLeftOf="@id/installmod_btn3"
-			app:layout_constraintTop_toBottomOf="@+id/installmod_btn3" />
+		<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-		<Button
-			android:id="@+id/button"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="2dp"
-			android:layout_marginTop="2dp"
-			android:background="@drawable/control_button"
-			android:onClick="toggleKeyboard"
-			android:text="Keyboard"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/zalith_button_bg"
+                android:onClick="toggleKeyboard"
+                android:text="KEYBOARD"
+                android:textColor="@color/zalith_accent" />
 
-		<Button
-			android:id="@+id/button3"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="2dp"
-			android:layout_marginTop="2dp"
-			android:background="@drawable/control_button"
-			android:onClick="performCopy"
-			android:text="Copy"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/button" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/zalith_button_bg"
+                android:onClick="performCopy"
+                android:text="COPY"
+                android:textColor="#FFF" />
+        </LinearLayout>
 
-		<Button
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginStart="2dp"
-			android:layout_marginTop="2dp"
-			android:background="@drawable/control_button"
-			android:onClick="performPaste"
-			android:text="Paste"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@+id/button3" />
+		<LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-		<Button
-			android:id="@+id/installmod_mouse_pri"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentBottom="true"
-			android:layout_marginBottom="2dp"
-			android:background="@drawable/control_button"
-			android:text="@string/control_primary"
-			app:layout_constraintBottom_toTopOf="@+id/installmod_mouse_sec"
-			app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/installmod_mouse_pri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/zalith_button_bg"
+                android:text="PRI"
+                android:textColor="@color/zalith_accent" />
 
-		<Button
-			android:id="@+id/installmod_mouse_sec"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentBottom="true"
-			android:layout_toRightOf="@id/installmod_mouse_pri"
-			android:background="@drawable/control_button"
-			android:text="@string/control_secondary"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintLeft_toRightOf="@id/installmod_mouse_pri"
-			app:layout_constraintStart_toStartOf="parent" />
+            <Button
+                android:id="@+id/installmod_mouse_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/zalith_button_bg"
+                android:text="SEC"
+                android:textColor="#FFF" />
+        </LinearLayout>
 
-		<Button
-			android:id="@+id/installmod_window_moveleft"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentBottom="true"
-			android:background="@drawable/control_button"
-			android:text="◀"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toEndOf="parent" />
+		<GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-		<Button
-			android:id="@+id/installmod_window_moveright"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentBottom="true"
-			android:layout_toRightOf="@id/installmod_mouse_pri"
-			android:background="@drawable/control_button"
-			android:text="▶"
-			app:layout_constraintBottom_toTopOf="@+id/installmod_window_moveleft"
-			app:layout_constraintEnd_toEndOf="@+id/installmod_window_moveleft" />
-
-		<Button
-			android:id="@+id/installmod_window_moveup"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentBottom="true"
-			android:layout_toRightOf="@id/installmod_mouse_pri"
-			android:background="@drawable/control_button"
-			android:text="▲"
-			app:layout_constraintBottom_toTopOf="@+id/installmod_window_moveleft"
-			app:layout_constraintEnd_toStartOf="@+id/installmod_window_moveright" />
-
-		<Button
-			android:id="@+id/installmod_window_movedown"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_alignParentBottom="true"
-			android:background="@drawable/control_button"
-			android:text="▼"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintEnd_toStartOf="@+id/installmod_window_moveleft" />
+            <View android:layout_width="40dp" android:layout_height="1dp"/>
+            <Button android:id="@+id/installmod_window_moveup" android:text="▲" android:background="@drawable/zalith_button_bg" android:layout_width="45dp"/>
+            <View android:layout_width="40dp" android:layout_height="1dp"/>
+            
+            <Button android:id="@+id/installmod_window_moveleft" android:text="◀" android:background="@drawable/zalith_button_bg" android:layout_width="45dp"/>
+            <Button android:id="@+id/installmod_window_movedown" android:text="▼" android:background="@drawable/zalith_button_bg" android:layout_width="45dp"/>
+            <Button android:id="@+id/installmod_window_moveright" android:text="▶" android:background="@drawable/zalith_button_bg" android:layout_width="45dp"/>
+        </GridLayout>
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
-	<com.kdt.LoggerView
+    <com.kdt.LoggerView
 		android:id="@+id/launcherLoggerView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
-		android:visibility="gone"
-		/>
+        android:background="#CC000000"
+		android:visibility="gone" />
 
 </FrameLayout>
-
