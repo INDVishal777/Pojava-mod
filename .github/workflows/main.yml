@@ -15,14 +15,8 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Grant Perms
+      - name: Final Perms Fix
         run: chmod +x gradlew
 
-      - name: Build Zalith Mod APK
-        run: ./gradlew assembleDebug -x test -x lint -x configureNdkBuildDebug -x buildNdkBuildDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: Dev-launcher-Pojav-APK
-          path: app_pojavlauncher/build/outputs/apk/debug/*.apk
+      - name: Build Zalith APK
+        run: ./gradlew assembleDebug -x test -x lint -x configureNdkBuildDebug -x buildNdkBuildDebug --stacktrace
