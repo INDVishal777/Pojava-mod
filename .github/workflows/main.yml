@@ -1,5 +1,5 @@
 name: Kanpur Cloud Build
-on: [push, workflow_dispatch] # workflow_dispatch se hum manually bhi button daba ke build kar sakte hain
+on: [push, workflow_dispatch]
 
 jobs:
   build:
@@ -7,6 +7,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
@@ -14,8 +16,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Fix gradlew permissions
-        run: chmod +x gradlew
+      - name: Cleanup & Fix Perms
+        run: |
+          chmod +x gradlew
+          ./gradlew clean
 
-      - name: Build with Stacktrace
-        run: ./gradlew assembleDebug -x test -x lint -x configureNdkBuildDebug -x buildNdkBuildDebug --stacktrace
+      - name: Build Zalith APK
+        run: ./gradlew assembleDebug -x test -x lint -x configureNdkBuildDebug -x buildNdkBuildDebug --stacktrace --continue
